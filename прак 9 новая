@@ -1,0 +1,108 @@
+#1
+
+# num = float(input('введите число'))
+# for bits in [2, 4, 6, 8, 12]:
+#     scaled = int(round(num * (2 ** bits)))
+#     binary = format(scaled, "08b")
+#     print(binary)
+#     print(int('01011010', 2)) # 90
+# 00010110 2
+# 90
+# 01011010 4
+# 90
+# 101101000 6
+# 90
+# 10110100000 8
+# 90
+# 101101000000000 12
+# 90
+
+
+#2
+# num = float(input('введите число'))
+# bits = int(input('введите биты'))
+# scaled = int(round(num * (2 ** bits)))
+# binary = format(scaled, "08b")
+# binary1 = binary
+# b = bits
+# value = int(binary1, 2) / (2 ** b)
+# print(binary)
+# print(value)
+
+# введите число 5.625
+# введите биты 4
+#01011010 - закодированное число
+# 5.625 - декодириванное число
+
+#3
+# num = float(input('введите число'))
+# for bits in [4, 8, 16]:
+#     scaled = int(round(num * (2 ** bits)))
+#     binary = format(scaled, "08b")
+#     binary1 = binary
+#     b = bits
+#     value = int(binary1, 2) / (2 ** b)
+#     print(binary)
+#     print(value)
+
+# введите число 67.12
+# 10000110010
+# 67.125
+# 100001100011111
+# 67.12109375
+# 10000110001111010111000
+# 67.1199951171875
+
+#4
+
+# import math
+# x = float(input('введите число'))
+# mantissa, exponent = math.frexp(x)
+# print(mantissa, exponent) # 0.82296875 6
+# #проверка
+# print(0.82296875 * 2 ** 6) # 52.67
+
+
+#5
+
+# import math
+# x = float(input('введите число'))
+# mantissa, exponent = math.frexp(x)
+# print('мантисса:', mantissa, 'порядок:', exponent)
+#введите число 15.67
+# мантисса: 0.979375 порядок: 4
+
+#6
+# import math
+# bits = 8
+# x = float(input('введите число'))
+# scaled = int(round(x * (2 ** bits)))
+# binary = format(scaled, "08b")
+# binary1 = binary
+# b = bits
+# value = int(binary1, 2) / (2 ** b)
+# print(value)
+# mantissa, exponent = math.frexp(x)
+# otv = mantissa * 2 ** exponent
+# print(otv)
+#
+# # введите число 12.52
+# # 12.51953125
+# # 12.52
+
+#7
+
+# x1 = [0.1] * 10
+# x2 = 0.1 * 10
+# a = 0
+# for i in x1:
+#     a += i
+# print(x1)
+# print(x2, a) #1.0 0.9999999999999999
+
+#8
+
+# a = 0.1 + 0.5 + 0.2 - 0.3
+# b = 0.1 + (0.5 + 0.2) - 0.3
+# print(a, b) # 0.5 0.49999999999999994
+
