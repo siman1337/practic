@@ -1,0 +1,150 @@
+print('num 1')
+
+print('a b F1 F2')
+for a in range(2):
+    for b in range(2):
+        F1 = a and b
+        F2 = (not(a and b))
+        print(a, b, F1, int(F2))
+
+# a b F1 F2
+# 0 0 0 1
+# 0 1 0 1
+# 1 0 0 1
+# 1 1 1 0
+
+
+print('num 2')
+
+print('a b F1 F2')
+for a in range(2):
+    for b in range(2):
+        F1 = a or b
+        F2 = (not(a or b))
+        print(a, b, F1, int(F2))
+
+# a b F1 F2
+# 0 0 0 1
+# 0 1 1 0
+# 1 0 1 0
+# 1 1 1 0
+
+
+print('num 3')
+
+print('a b f1 f2 f')
+for a in [0, 1]:
+    for b in [0, 1]:
+        or_part = a or b
+        and_part = a and b
+        xor = or_part and not and_part
+        print(a, b, int(or_part), int(and_part), int(xor))
+
+
+# a b f1 f2 f
+# 0 0 0 0 0
+# 0 1 1 0 1
+# 1 0 1 0 1
+# 1 1 1 1 0
+
+
+print('num 4')
+
+print(int(not(not(0))), int(not(not(1)))) # 0 1
+
+print('num 5')
+
+
+print('a b f1 f2')
+for a in range(2):
+    for b in range(2):
+        f1 = a or b
+        f2 = b or a
+        if f1 == f2:
+            print(a, b, f1, f2)
+        else:
+            print('false')
+
+print('a b f1 f2')
+for a in range(2):
+    for b in range(2):
+        f1 = a and b
+        f2 = b and a
+        if f1 == f2:
+            print(a, b, f1, f2)
+        else:
+            print('false')
+
+
+print('num 6')
+
+print('a b c f1 f2')
+for a in range(2):
+    for b in range(2):
+        for c in range(2):
+            f1 =  a or (b or c)
+            f2 = (a or b) or c
+            if f1 == f2:
+                print(a, b, c, f1, f2)
+            else:
+                print('false')
+
+print('a b c f1 f2')
+for a in range(2):
+    for b in range(2):
+        for c in range(2):
+            f1 =  (a or c) or b
+            f2 =  a or (c or b)
+            if f1 == f2:
+                print(a, b, c, f1, f2)
+            else:
+                print('false')
+
+
+print('num 7')
+
+
+print('a b c f1 f2 f3 f')
+for a in range(2):
+    for b in range(2):
+        for c in range(2):
+            f1 = b or c
+            f2  = a and f1
+            f3 = f2 or a
+            f = a and (b or c) or a
+            print(a, b, c, f1, f2, f3, f)
+
+
+# a b c f1 f2 f3 f
+# 0 0 0 0 0 0 0
+# 0 0 1 1 0 0 0
+# 0 1 0 1 0 0 0
+# 0 1 1 1 0 0 0
+# 1 0 0 0 0 1 1
+# 1 0 1 1 1 1 1
+# 1 1 0 1 1 1 1
+# 1 1 1 1 1 1 1
+
+
+print('num 8')
+
+
+print('not(a and b)')
+print('a b f_1')
+for a in range(2):
+    for b in range(2):
+        f_1 = (not(a and b))
+        f1 = a and b
+        f2 = int(not(f1))
+        print(a, b, int(f_1))
+
+print('not(a) or (not(b))')
+print('a b f_2')
+for a in range(2):
+    for b in range(2):
+        f_2 = (not(a) or (not(b)))
+        f1 = int(not(a))
+        f2 = int(not(b))
+        f3 = f1 or f2
+        print(a, b, int(f_2))
+print(f_1 == f_2)
