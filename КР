@@ -1,0 +1,62 @@
+print('задание 1')
+
+from math import *
+p = [0.6, 0.2, 0.1, 0.1]
+h = -sum(pi*log2(pi) for pi in p)
+print(f'{h:.4f}')
+
+
+print('задание 2')
+
+#постоянный код
+code = {'a': '00', 'b': '01', 'c': '10'}
+message = "aaabbaac"
+encode1 = ''.join(code[x] for x in message)
+print(len(encode1))#обьем
+#переменный код
+code = {'a': '0', 'b': '10', 'c': '11'}
+message = "aaabbaac"
+encode2 = ''.join(code[x] for x in message)
+print(len(encode2))#обьем
+print(len(encode1) - len(encode2)) # 'экономия бит
+
+
+print('задание 3')
+
+message = "1010"
+def encode(data):
+    d1, d2, d3, d4 = (int(x) for x in data)
+    p1 = d1 ^ d2 ^ d4
+    p2 = d1 ^ d3 ^ d4
+    p4 = d2 ^ d3 ^ d4
+    code = [p1, p2, d1, p4, d2, d3, d4]
+    return ''.join(str(x) for x in code)
+code = encode(message)
+def syndrome(code):
+    b = [int(x) for x in code]
+    s1 = b[0] ^ b[2] ^ b[4] ^ b[6]
+    s2 = b[1] ^ b[2] ^ b[5] ^ b[6]
+    s4 = b[3] ^ b[4] ^ b[5] ^ b[6]
+    return s1 * 1 + s2 * 2 + s4 * 4
+sn = syndrome(code)
+print(code)
+print(sn)
+
+
+
+print('задание 4')
+
+#прямой
+num = 73
+bits = 8
+dv = format(num, f"0{bits-1}b")
+dv_1 = "1" + dv
+print(dv_1)
+#обратный
+direct = dv_1
+inv = "".join(str(int(not int(b))) for b in direct)
+inv = '1' + inv[1:]
+print(inv)
+#доп код
+twos = format(int(inv, 2) + 1, "08b")
+print(twos)
