@@ -1,0 +1,59 @@
+print('номер 1')
+
+a1 = []
+for x in range(2):
+    for y in range(2):
+            f = (not(x)) or y
+            if  f:
+                a = []
+                a.append("¬x" if x == 0 else "x")
+                a.append("¬y" if y == 0 else "y")
+                a1.append("(" + " ^ ".join(a) + ")")
+
+dnf = " v ".join(a1)
+print(dnf) # (¬x ^ ¬y) v (¬x ^ y) v (x ^ y)
+
+
+
+print('номер 2')
+
+a = []
+for x in range(2):
+    for y in range(2):
+        f = x and (not y)
+        if f == 0:
+            a1 = []
+            a1.append('x' if x == 0 else '¬x')
+            a1.append('y' if y == 0 else '¬y')
+            a.append('(' + ' v '.join(a1) + ')')
+knf  = ' ^ '.join(a)
+print(knf) # (x V y) ^ (x V ¬y) ^ (¬x V ¬y)
+
+print('номер 3')
+
+cl = []
+cl2 = []
+for x in range(2):
+    for y in range(2):
+        for z in range(2):
+            f = x or (y and z)
+            if f == 0:
+                cl1 = []
+                cl1.append('x' if x == 0 else '¬x')
+                cl1.append('y' if y == 0 else '¬y')
+                cl1.append('z' if z == 0 else '¬z')
+                cl.append('('+' v '.join(cl1) + ')')
+            elif f == 1:
+                cl_2 = []
+                cl_2.append("¬x" if x == 0 else "x")
+                cl_2.append("¬y" if y == 0 else "y")
+                cl_2.append("¬z" if z == 0 else "z")
+                cl2.append('('+' ^ '.join(cl_2) + ')')
+knf = ' ^ '.join(cl)
+dnf = ' v '.join(cl2)
+print(x, y, f)
+print('кнф:', knf)
+print('днф:', dnf)
+
+# кнф: (x v y v z) ^ (x v y v ¬z) ^ (x v ¬y v z)
+# днф: (¬x ^ y ^ z) v (x ^ ¬y ^ ¬z) v (x ^ ¬y ^ z) v (x ^ y ^ ¬z) v (x ^ y ^ z)
