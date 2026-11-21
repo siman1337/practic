@@ -1,0 +1,247 @@
+{
+  "format": "flowchart-lab-1",
+  "name": "Новая схема",
+  "nodes": [
+    {
+      "id": 1,
+      "type": "start",
+      "text": "Начало",
+      "x": 718,
+      "y": -126
+    },
+    {
+      "id": 2,
+      "type": "io",
+      "text": "Ввод S",
+      "x": 718,
+      "y": 63
+    },
+    {
+      "id": 4,
+      "type": "decision",
+      "text": "S < 1000?",
+      "x": 716,
+      "y": 256
+    },
+    {
+      "id": 9,
+      "type": "process",
+      "text": "d = 300",
+      "x": 936,
+      "y": 359
+    },
+    {
+      "id": 11,
+      "type": "decision",
+      "text": "1000 <= S <= 2999?",
+      "x": 530,
+      "y": 420
+    },
+    {
+      "id": 13,
+      "type": "process",
+      "text": "d = 150",
+      "x": 705,
+      "y": 568
+    },
+    {
+      "id": 14,
+      "type": "process",
+      "text": "d = 0",
+      "x": 354,
+      "y": 570
+    },
+    {
+      "id": 17,
+      "type": "process",
+      "text": "k = S + d",
+      "x": 706.2740357970579,
+      "y": 858.4191619307876
+    },
+    {
+      "id": 21,
+      "type": "io",
+      "text": "Вывод k",
+      "x": 706.2740357970572,
+      "y": 999.7007529986404
+    },
+    {
+      "id": 23,
+      "type": "start",
+      "text": "Конец",
+      "x": 706.2740357970572,
+      "y": 1157.7935446192744
+    },
+    {
+      "id": 25,
+      "type": "connector",
+      "text": "",
+      "x": 705.4061520057014,
+      "y": 748.790055250908
+    }
+  ],
+  "edges": [
+    {
+      "id": 3,
+      "from": 1,
+      "to": 2,
+      "source": "bottom",
+      "target": "top",
+      "label": "",
+      "route": "straight",
+      "color": "#000000",
+      "tip": "triangle",
+      "width": 2.5
+    },
+    {
+      "id": 5,
+      "from": 2,
+      "to": 4,
+      "source": "bottom",
+      "target": "top",
+      "label": "",
+      "route": "straight",
+      "color": "#000000",
+      "tip": "triangle",
+      "width": 2.5
+    },
+    {
+      "id": 10,
+      "from": 4,
+      "to": 9,
+      "source": "right",
+      "target": "top",
+      "label": "Да",
+      "route": "orthogonal",
+      "color": "#000000",
+      "tip": "triangle",
+      "width": 2.5
+    },
+    {
+      "id": 12,
+      "from": 4,
+      "to": 11,
+      "source": "left",
+      "target": "top",
+      "label": "Нет",
+      "route": "orthogonal",
+      "color": "#000000",
+      "tip": "triangle",
+      "width": 2.5
+    },
+    {
+      "id": 15,
+      "from": 11,
+      "to": 14,
+      "source": "left",
+      "target": "top",
+      "label": "Нет",
+      "route": "orthogonal",
+      "color": "#000000",
+      "tip": "triangle",
+      "width": 2.5
+    },
+    {
+      "id": 16,
+      "from": 11,
+      "to": 13,
+      "source": "right",
+      "target": "top",
+      "label": "Да",
+      "route": "orthogonal",
+      "color": "#000000",
+      "tip": "triangle",
+      "width": 2.5
+    },
+    {
+      "id": 22,
+      "from": 17,
+      "to": 21,
+      "source": "bottom",
+      "target": "top",
+      "label": "",
+      "route": "orthogonal",
+      "color": "#000000",
+      "tip": "triangle",
+      "width": 2.5
+    },
+    {
+      "id": 24,
+      "from": 21,
+      "to": 23,
+      "source": "bottom",
+      "target": "top",
+      "label": "",
+      "route": "orthogonal",
+      "color": "#000000",
+      "tip": "triangle",
+      "width": 2.5
+    },
+    {
+      "id": 26,
+      "from": 14,
+      "to": 25,
+      "source": "bottom",
+      "target": "top",
+      "label": "",
+      "route": "orthogonal",
+      "color": "#000000",
+      "tip": "triangle",
+      "width": 2.5
+    },
+    {
+      "id": 27,
+      "from": 13,
+      "to": 25,
+      "source": "bottom",
+      "target": "top",
+      "label": "",
+      "route": "orthogonal",
+      "color": "#000000",
+      "tip": "triangle",
+      "width": 2.5
+    },
+    {
+      "id": 28,
+      "from": 9,
+      "to": 25,
+      "source": "bottom",
+      "target": "top",
+      "label": "",
+      "route": "orthogonal",
+      "color": "#000000",
+      "tip": "triangle",
+      "width": 2.5,
+      "routePoints": [
+        {
+          "x": 936,
+          "y": 391
+        },
+        {
+          "x": 936,
+          "y": 666.9699912982197
+        },
+        {
+          "x": 705.4061520057014,
+          "y": 666.9699912982197
+        },
+        {
+          "x": 705.4061520057014,
+          "y": 730.790055250908
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "from": 25,
+      "to": 17,
+      "source": "bottom",
+      "target": "top",
+      "label": "",
+      "route": "orthogonal",
+      "color": "#000000",
+      "tip": "triangle",
+      "width": 2.5
+    }
+  ]
+}
